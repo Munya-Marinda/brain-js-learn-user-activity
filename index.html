@@ -24,61 +24,113 @@
     <link rel="stylesheet" href="css/styles.css?v=1.0" />
     <script src="lib/jquery-3.6.0.min.js"></script>
     <script src="lib/brain.js"></script>
+    <script type="text/javascript" src="learn/user-activity.json"></script>
+    <script type="text/javascript" src="learn/user-activity.js"></script>
   </head>
 
   <body>
-    <div id="fullContainer">
+    <div class="fullContainer" id="trainModelTab">
       <div id="brainjsLogoContainer">
-        <h1 id="brainjsText">
-          TRAIN A <br />
-          MODEL
-        </h1>
+        <h1 id="brainjsText">TRAIN MODEL</h1>
       </div>
 
       <div id="brainControlPanel">
-        <label for="filePath">Enter a file name in folder <b>/learn</b> </label>
+        <label for="filePath"
+          >Select a file name in folder <b>/learn</b>:
+        </label>
         <br />
         <br />
-        <input name="filePath" id="filePath" value="user-activity.json" />
-      </div>
+        <select id="filePath">
+          <option value="user-activity.json">user-activity.json</option>
+        </select>
+        <br />
+        <br />
+        <input
+          type="checkbox"
+          id="showStatsPrompt"
+          name="showStatsPrompt"
+          value="Bike"
+        />
+        <label for="showStatsPrompt">Show stats?</label><br />
+        <br />
+        <br />
+        <button
+          class="btn-default"
+          id="btnLearn"
+          name="learn"
+          onclick="StartTraining()"
+        >
+          start training
+        </button>
 
-      <div id="fileContentContainer">
+        <br />
+        <br /> 
+        <br /> 
+        <br /> 
+        <br /> 
+         
         <div id="fileContentContainerLabel">
-          <label for="fileContent"
-            >File is not loaded. <b> Enter file path.</b></label
-          >
+          <label class="header-text">Training Data</label>
+          <label for="fileContent">Click <b>'START TRAINING'</b>.</label>
         </div>
-        <br />  
-        <textarea rows="20" id="fileContent">
-      //
-      //
-      //
-      // 
-      //
+        <br />
+        <textarea rows="10" id="fileContent">
+////////////////////////////
+
+TRAINING DATA WILL APPEAR HERE
     </textarea
+        >
+      </div>
+    </div>
+    <div id="learningStats">
+      <br />
+      <label style="margin-left: 20px" for="filePath">Training Stats: </label>
+      <hr width="100%" />
+      <textarea rows="10" id="learningStatsText">
+////////////////////////////
+
+TRAINING STATS WILL APPEAR HERE
+</textarea
+      >
+    </div>
+    <br />
+    <br />
+    <div class="fullContainer" id="useModelTab">
+      <div id="brainjsLogoContainer">
+        <h1 id="brainjsText">USE MODEL</h1>
+      </div>
+      <div id="brainControlPanel">
+        <label for="filePath">Enter a text query: </label>
+        <br />
+        <br />
+        <input type="text" name="question" id="txtQuestion" />
+        <br />
+        <br />
+        <button
+          class="btn-default"
+          id="btnAnswer"
+          name="answer"
+          onclick="QueryData()"
+        >
+          Answer
+        </button>
+      </div>
+      <div id="fileContentContainer">
+        <textarea rows="10" id="queryOutPut">
+////////////////////////////
+
+YOUR ANSWER WILL APPEAR HERE
+      </textarea
         >
       </div>
     </div>
 
     <br />
     <br />
-    <div id="fullContainer">
-      <div id="brainjsLogoContainer">
-        <h1 id="brainjsText">TRAINED MODEL</h1>
-      </div>
-      <div id="brainControlPanel">
-        <input type="text" name="question" id="txtQuestion" />
-        <button id="btnAnswer" name="answer">Answer</button>
-        <br />
-        <button id="btnLearn" name="learn">Learn</button>
-        <p id="answerOut">Your Answer Will Appear Here</p>
-      </div>
-      <textarea rows="20" id="learningStats">
-        //
-        //
-        //
-        // 
-      </textarea>
+    <div id="bottomNavTab">
+      <button class="btn-default" onclick="SwitchTabs('useModelTab')">
+        USE MODEL
+      </button>
     </div>
 
     <script src="js/scripts.js"></script>

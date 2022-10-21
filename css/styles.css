@@ -1,9 +1,23 @@
 * {
-  font-family: Trebuchet MS;
+  font-family: monospace;
 }
 
 body {
   background-color: white;
+}
+
+#useModelTab {
+  display: none;
+}
+
+#bottomNavTab {
+  width: 90%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+justify-content: flex-end;
+/* padding: 0px 50px; */
 }
 
 #filePath {
@@ -16,18 +30,20 @@ body {
   padding: 5px;
 }
 
-#fullContainer {
-  display: flex;
+.fullContainer {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
 }
 
 #brainjsLogoContainer {
   background-color: orange;
-  height: 20vw;
+  height: 100%;
   padding: 40px;
 }
 
-#learningStats {
-  width: 70%;
+#queryOutPut {
+  width: 97%;
   padding: 20px 10px;
   border: 0px;
   border-top: 1px solid orange;
@@ -35,21 +51,20 @@ body {
 }
 
 #fileContent {
-  width: 100%;
-  padding: 20px 0px;
+  width: 97%;
+  padding: 20px;
   border: 0px;
-  border-top: 1px solid orange;
+  border: 1px solid orange; 
 }
 
 #fileContentContainer {
   width: 100%;
-  border: 0px;
-  border-top: 1px solid orange;
-  border-bottom: 1px solid orange;
+  border: 0px; 
 }
 
 #fileContentContainerLabel {
-  padding: 20px 10px 0px 10px;
+  background-color: orange;
+  padding: 20px 10px 20px 10px;
 }
 
 #brainjsText {
@@ -70,7 +85,46 @@ body {
   padding: 10px;
 }
 
-#answerOut {
-  border: 1px solid gray;
-  text-align: center;
+#brainControlPanel > select {
+  background-color: rgba(255, 166, 0, 0.288);
+  border: 0px;
+  font-size: large;
+  padding: 10px;
+}
+
+.btn-default:hover {
+  background-color: orange;
+}
+
+#learningStats {
+  border: 1px solid orange;
+  border-top: 0px;
+  width: 100%;
+  display: none;
+}
+
+#learningStatsText {
+  width: 95%;
+  padding: 20px;
+  border: 0px;
+}
+
+.btn-default {
+  cursor: pointer;
+  padding: 7px 8px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: rgb(255, 136, 38);
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-family: monospace;
+}
+
+.header-text {
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: xx-large;
 }

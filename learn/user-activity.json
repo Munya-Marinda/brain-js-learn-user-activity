@@ -1,3 +1,2 @@
-{
-  "clicks": 0
-}
+// all_user_data =  '["One","Two"]';
+all_user_data =  '[{"name" : "Niroj", "age" : "22"},{"name" : "Dey", "age" : "20"}]';
