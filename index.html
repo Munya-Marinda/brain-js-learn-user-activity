@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Brain JS: [project name]</title>
+    <meta
+      name="description"
+      content="A program based on the Brain.js library"
+    />
+    <meta name="author" content="Munya" />
+
+    <meta property="og:title" content="Brain JS: [program name]" />
+    <meta property="og:type" content="Machine Learning" />
+    <meta property="og:url" content="brain.js.org" />
+    <meta
+      property="og:description"
+      content="A program based on the Brain.js library"
+    />
+    <meta property="og:image" content="none... yet" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="lib/brain.js"></script>
+  </head>
+
+  <body>
+    <div id="fullContainer">
+      <div id="brainjsLogoContainer">
+        <h1 id="brainjsText">
+          TRAIN A <br />
+          MODEL
+        </h1>
+      </div>
+
+      <div id="brainControlPanel">
+        <label for="filePath">Enter a file name in folder <b>/learn</b> </label>
+        <br />
+        <br />
+        <input name="filePath" id="filePath" value="user-activity.json" />
+      </div>
+
+      <div id="fileContentContainer">
+        <div id="fileContentContainerLabel">
+          <label for="fileContent"
+            >File is not loaded. <b> Enter file path.</b></label
+          >
+        </div>
+        <br />  
+        <textarea rows="20" id="fileContent">
+      //
+      //
+      //
+      // 
+      //
+    </textarea
+        >
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <div id="fullContainer">
+      <div id="brainjsLogoContainer">
+        <h1 id="brainjsText">TRAINED MODEL</h1>
+      </div>
+      <div id="brainControlPanel">
+        <input type="text" name="question" id="txtQuestion" />
+        <button id="btnAnswer" name="answer">Answer</button>
+        <br />
+        <button id="btnLearn" name="learn">Learn</button>
+        <p id="answerOut">Your Answer Will Appear Here</p>
+      </div>
+      <textarea rows="20" id="learningStats">
+        //
+        //
+        //
+        // 
+      </textarea>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

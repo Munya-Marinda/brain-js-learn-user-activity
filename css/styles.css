@@ -1,0 +1,76 @@
+* {
+  font-family: Trebuchet MS;
+}
+
+body {
+  background-color: white;
+}
+
+#filePath {
+  font-weight: bold;
+  font-size: large;
+}
+
+#learningData {
+  border: 1px gray solid;
+  padding: 5px;
+}
+
+#fullContainer {
+  display: flex;
+}
+
+#brainjsLogoContainer {
+  background-color: orange;
+  height: 20vw;
+  padding: 40px;
+}
+
+#learningStats {
+  width: 70%;
+  padding: 20px 10px;
+  border: 0px;
+  border-top: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
+
+#fileContent {
+  width: 100%;
+  padding: 20px 0px;
+  border: 0px;
+  border-top: 1px solid orange;
+}
+
+#fileContentContainer {
+  width: 100%;
+  border: 0px;
+  border-top: 1px solid orange;
+  border-bottom: 1px solid orange;
+}
+
+#fileContentContainerLabel {
+  padding: 20px 10px 0px 10px;
+}
+
+#brainjsText {
+  color: black;
+  font-size: 5vw;
+  text-align: right;
+}
+
+#brainControlPanel {
+  border: 1px solid orange;
+  padding: 20px;
+}
+
+#brainControlPanel > input {
+  background-color: rgba(255, 166, 0, 0.288);
+  border: 0px;
+  font-size: large;
+  padding: 10px;
+}
+
+#answerOut {
+  border: 1px solid gray;
+  text-align: center;
+}

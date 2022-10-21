@@ -1,0 +1,108 @@
+{
+    "type": "NeuralNetwork",
+    "sizes": [
+        4,
+        3,
+        4
+    ],
+    "layers": [
+        {
+            "weights": [],
+            "biases": []
+        },
+        {
+            "weights": [
+                [
+                    -0.7031485438346863,
+                    -3.304732322692871,
+                    3.249685764312744,
+                    0.6803221702575684
+                ],
+                [
+                    -3.126804828643799,
+                    0.6767196655273438,
+                    -1.6574409008026123,
+                    3.6602137088775635
+                ],
+                [
+                    -3.4991044998168945,
+                    2.7146384716033936,
+                    2.610377073287964,
+                    -2.1819138526916504
+                ]
+            ],
+            "biases": [
+                -0.11598031967878342,
+                -0.47722128033638,
+                0.07035950571298599
+            ]
+        },
+        {
+            "weights": [
+                [
+                    0.011490599252283573,
+                    -4.388947010040283,
+                    -4.777772426605225
+                ],
+                [
+                    -5.442617416381836,
+                    1.004309892654419,
+                    3.4341797828674316
+                ],
+                [
+                    4.097884178161621,
+                    -2.782965898513794,
+                    2.5950207710266113
+                ],
+                [
+                    0.42648929357528687,
+                    4.941439628601074,
+                    -3.3354899883270264
+                ]
+            ],
+            "biases": [
+                2.217319965362549,
+                -1.13812255859375,
+                -3.699993848800659,
+                -2.371323347091675
+            ]
+        }
+    ],
+    "inputLookup": {
+        "About or History": 0,
+        "What is UBUNTU?": 1,
+        "How it works": 2,
+        "Hardware": 3
+    },
+    "inputLookupLength": 4,
+    "outputLookup": {
+        "The History Of The Ubuntu Operating System Information Technology Essay. Since Linux was brought in 1991 by a Finnish student named Linus Torvalds. During that time, it only able to run i386 systems, and was essentially an independently-created duplicate of the UNIX kernel, mostly the Linux was planned to take advantage of the then-new i386 architecture.": 0,
+        "Ubuntu is a complete desktop Linux Operating System (OS), freely available with both public and professional support. ": 1,
+        "The Ubuntu community is built on the ideas preserved in the Ubuntu platform, that software should be available free of charge, that software should also be usable by people in their own local language and despite any disabilities, and that people should have freedom to customize and change their software in whatever way they see it fit. Developers have access to all the source codes, thus being able to mix new functions easily or to find and remove programming viruses ‘quickly.": 2,
+        "So drivers for new adapters (Graphics Cards, SCSI Controller, etc.) can be combined very fast.": 3
+    },
+    "outputLookupLength": 4,
+    "options": {
+        "inputSize": 0,
+        "outputSize": 0,
+        "binaryThresh": 0.5,
+        "hiddenLayers": [
+            3
+        ]
+    },
+    "trainOpts": {
+        "activation": "sigmoid",
+        "iterations": 20000,
+        "errorThresh": 0.005,
+        "log": false,
+        "logPeriod": 10,
+        "leakyReluAlpha": 0.01,
+        "learningRate": 0.3,
+        "momentum": 0.1,
+        "callbackPeriod": 10,
+        "timeout": "Infinity",
+        "beta1": 0.9,
+        "beta2": 0.999,
+        "epsilon": 1e-8
+    }
+}
