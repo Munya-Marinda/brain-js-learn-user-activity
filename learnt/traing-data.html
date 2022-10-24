@@ -1,0 +1,86 @@
+<!--
+
+==================================================================
+==================================================================
+
+DEVELOPER: MUNYA 
+DESCR: Train and test json data against a Brain JS Neural Network                 
+
+==================================================================
+==================================================================                 
+                                                    
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Brain JS: [project name]</title>
+    <meta
+      name="description"
+      content="A program based on the Brain.js library"
+    />
+    <meta name="author" content="Munya" />
+
+    <meta property="og:title" content="Brain JS: [program name]" />
+    <meta property="og:type" content="Machine Learning" />
+    <meta property="og:url" content="brain.js.org" />
+    <meta
+      property="og:description"
+      content="A program based on the Brain.js library"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!--     INTRODUCTION      -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <div id="brainjsLogoContainer-td" class="center-row">
+      <div id="text-parent">
+        <label for="saveModel1"
+          ><b>COPY</b> and <b>PASTER</b> this into your .json file.
+        </label>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="text-parent-fstart-column">
+      <textarea rows="35" id="saveModel1"></textarea>
+    </div>
+
+    <script>
+      // get output element
+      const output = document.getElementById("saveModel1");
+      output.innerHTML = "";
+
+      // get model from local storage
+      output.innerHTML = localStorage.getItem("NeuralNetwork");
+      console.log(JSON.parse(localStorage.getItem("NeuralNetwork")));
+    </script>
+  </body>
+</html>
