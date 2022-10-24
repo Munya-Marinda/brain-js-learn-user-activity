@@ -1,3 +1,14 @@
+/*
+==================================================================
+==================================================================
+
+DEVELOPER: MUNYA 
+DESCR: Train and test json data against a Brain JS Neural Network                 
+
+==================================================================
+==================================================================
+*/
+
 * {
   font-family: monospace;
 }
@@ -10,14 +21,27 @@ body {
   display: none;
 }
 
-#bottomNavTab {
-  width: 90%;
-  border: 1px solid black;
+#topNavTab {
+  width: 65%;
+  margin: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
-justify-content: flex-end;
-/* padding: 0px 50px; */
+  justify-content: flex-end;
+  /* padding: 0px 50px; */
+}
+
+#tabTrainingDataView {
+  display: none;
+}
+
+#logoIntroTabImageDiv {
+  width: 65vw;
+  height: 20vw;
+  background-image: url("../public/logo.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #filePath {
@@ -31,9 +55,9 @@ justify-content: flex-end;
 }
 
 .fullContainer {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #brainjsLogoContainer {
@@ -42,47 +66,195 @@ justify-content: flex-end;
   padding: 40px;
 }
 
+#brainjsLogoContainer-td {
+  background-color: orange;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px 40px;
+}
+
 #queryOutPut {
   width: 97%;
   padding: 20px 10px;
   border: 0px;
-  border-top: 1px solid orange;
-  border-bottom: 1px solid orange;
+  background-color: rgba(255, 166, 0, 0.3);
+}
+
+#fileContent-ShowOnUseModel {
+  width: 97%;
+  padding: 20px 0px 20px 20px;
+  border: 0px;
+  background-color: rgba(255, 166, 0, 0.3);
+}
+
+#saveModel1 {
+  width: 97%;
+  padding: 20px 0px 20px 20px;
+  border: 0px;
+  background-color: rgba(255, 166, 0, 0.3);
 }
 
 #fileContent {
-  width: 97%;
-  padding: 20px;
+  width: 95%;
+  padding: 20px 0px 20px 20px;
   border: 0px;
-  border: 1px solid orange; 
+  background-color: rgba(255, 166, 0, 0.3);
 }
 
 #fileContentContainer {
   width: 100%;
-  border: 0px; 
+  border: 0px;
 }
 
-#fileContentContainerLabel {
-  background-color: orange;
-  padding: 20px 10px 20px 10px;
+#tabsMainParent {
+  width: 100%;
+  display: none;
 }
 
-#brainjsText {
+#brainjsText-right {
   color: black;
   font-size: 5vw;
   text-align: right;
 }
 
+#brainjsText-left {
+  color: black;
+  font-size: 5vw;
+  text-align: left;
+}
+
+#brainjsText-left-fitContent {
+  width: fit-content;
+  color: black;
+  font-size: 3 vw;
+  text-align: left;
+}
+
+#bigArrowNext {
+  width: 25%;
+}
+
+#bigArrowNext-svg {
+  fill: rgb(146, 33, 33);
+  animation: bigArrowNext1 2s alternate infinite;
+}
+
 #brainControlPanel {
+  /* width: 100%; */
   border: 1px solid orange;
+  /* padding: 20px; */
+}
+
+#text-parent-fend {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#text-parent-fstart {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text-parent-fstart-column {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pad-20 {
   padding: 20px;
 }
 
-#brainControlPanel > input {
+#text-parent-fend-column {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#text-parent-fstart-row {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ===================== */
+/* ===================== */
+/*        MALICIOUS       */
+/* ===================== */
+/* ===================== */
+
+.fit-content {
+  width: fit-content;
+}
+
+.flex-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.width-100perc {
+  width: 100%;
+}
+
+/* ===================== */
+/* ===================== */
+/*     MALICIOUS END     */
+/* ===================== */
+/* ===================== */
+
+#trainModelTab {
+  display: flex;
+  align-items: center;
+}
+
+.width-container {
+  width: 70vw;
+}
+
+#trainAModel-NoModel {
+  display: none;
+}
+
+#btnTrainAnotherModelTab {
+  display: none;
+}
+
+#filePath {
   background-color: rgba(255, 166, 0, 0.288);
   border: 0px;
   font-size: large;
   padding: 10px;
+}
+
+#txtQuestion {
+  background-color: rgba(255, 166, 0, 0.288);
+  border: 0px;
+  font-size: medium;
+  padding: 10px;
+  width: 50%;
 }
 
 #brainControlPanel > select {
@@ -96,6 +268,90 @@ justify-content: flex-end;
   background-color: orange;
 }
 
+.btn-default {
+  width: fit-content;
+  /* margin: 20px; */
+  cursor: pointer;
+  padding: 7px 8px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: rgb(226, 83, 0);
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+}
+
+.btn-tabNav:hover {
+  animation: tabNav2 2s alternate infinite;
+  background-color: orange;
+  color: rgba(0, 0, 0, 0.308);
+}
+
+.btn-tabNav {
+  width: 100%;
+  /* margin: 20px; */
+  cursor: pointer;
+  padding: 100px 8px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: orange;
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-family: monospace;
+  font-size: xx-large;
+  animation: tabNav1 2s alternate infinite;
+}
+
+#btn-useModelTab:hover {
+  animation: tabNav1 2s alternate infinite;
+  background-color: orange;
+  color: rgba(0, 0, 0, 0.308);
+}
+
+#btn-useModelTab {
+  width: 100%;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 100px 8px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: orange;
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-family: monospace;
+  font-size: xx-large;
+  animation: tabNav2 2s alternate infinite;
+}
+
+#btn-trainModelTab:hover {
+  animation: tabNav2 2s alternate infinite;
+  background-color: orange;
+  color: rgba(0, 0, 0, 0.308);
+}
+
+#btn-trainModelTab {
+  width: 100%;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 100px 8px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: orange;
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-family: monospace;
+  font-size: xx-large;
+  animation: tabNav1 2s alternate infinite;
+}
+
 #learningStats {
   border: 1px solid orange;
   border-top: 0px;
@@ -104,22 +360,10 @@ justify-content: flex-end;
 }
 
 #learningStatsText {
-  width: 95%;
+  background-color: rgba(255, 166, 0, 0.3);
+  width: 75%;
   padding: 20px;
   border: 0px;
-}
-
-.btn-default {
-  cursor: pointer;
-  padding: 7px 8px;
-  border: 0px;
-  border-radius: 5px;
-  background-color: rgb(255, 136, 38);
-  /* FONT */
-  font-weight: bold;
-  text-transform: uppercase;
-  color: black;
-  font-family: monospace;
 }
 
 .header-text {
@@ -127,4 +371,132 @@ justify-content: flex-end;
   font-weight: bold;
   text-transform: uppercase;
   font-size: xx-large;
+}
+
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* 
+      ANIMATIONS
+*/
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+
+@keyframes tabNav1 {
+  from {
+    background-color: rgb(255, 244, 94);
+  }
+
+  to {
+    background-color: rgb(243, 200, 60);
+  }
+}
+
+@keyframes tabNav2 {
+  from {
+    background-color: rgb(219, 210, 75);
+  }
+
+  to {
+    background-color: rgb(255, 239, 94);
+  }
+}
+
+@keyframes bigArrowNext1 {
+  from {
+    fill: rgb(255, 210, 85);
+  }
+
+  to {
+    fill: rgb(255, 239, 94);
+  }
+}
+
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* 
+      MEDIA QUERIES
+*/
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+/* ===================== */
+
+@media (max-width: 600px) {
+  #text-parent-fend-column {
+    margin-bottom: 40px;
+    }
+
+  #fileContentContainer {
+    margin-bottom: 40px;
+  }
+
+  #tabTrainingDataView {
+    margin-top: 40px;
+  }
+
+  #brainjsText-right {
+    font-size: xx-large;
+  }
+
+  #topNavTab {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #logoIntroTabImageDiv {
+    width: 100vw;
+    height: 25vw;
+  }
+
+  .width-container {
+    width: 80vw;
+  }
+
+  #btn-trainModelTab {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+
+  #btn-useModelTab {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  #fileContent,
+  #queryOutPut,
+  #fileContent-ShowOnUseModel {
+    width: 90%;
+  }
+}
+
+@media (min-width: 600px) {
+}
+
+@media (min-width: 900px) {
+  #brainControlPanel {
+    width: 70vw;
+  }
+
+  .width-container {
+    width: 70vw;
+  }
 }
