@@ -35,10 +35,19 @@ body {
   display: none;
 }
 
+#logoHomeTabImageDiv {
+  width: 65vw;
+  height: 20vw;
+  background-image: url("../public/logo0.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 #logoIntroTabImageDiv {
   width: 65vw;
   height: 20vw;
-  background-image: url("../public/logo.svg");
+  background-image: url("../public/logo_toJSON.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -306,6 +315,29 @@ body {
   animation: tabNav1 2s alternate infinite;
 }
 
+.btn-homeGoTo:hover {
+  animation: tabNav1 2s alternate infinite;
+  background-color: orange;
+  color: rgba(0, 0, 0, 0.308);
+}
+
+.btn-homeGoTo {
+  width: 100%;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 100px 8px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: orange;
+  /* FONT */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  font-family: monospace;
+  font-size: xx-large;
+  animation: tabNav2 2s alternate infinite;
+}
+
 #btn-useModelTab:hover {
   animation: tabNav1 2s alternate infinite;
   background-color: orange;
@@ -442,7 +474,7 @@ body {
 @media (max-width: 600px) {
   #text-parent-fend-column {
     margin-bottom: 40px;
-    }
+  }
 
   #fileContentContainer {
     margin-bottom: 40px;
@@ -462,6 +494,11 @@ body {
     flex-direction: column;
   }
 
+  #logoHomeTabImageDiv {
+    width: 100vw;
+    height: 25vw;
+  }
+
   #logoIntroTabImageDiv {
     width: 100vw;
     height: 25vw;
@@ -474,6 +511,11 @@ body {
   #btn-trainModelTab {
     margin-right: 0px;
     margin-bottom: 10px;
+  }
+
+  .btn-homeGoTo {
+    margin-left: 0px;
+    margin-top: 10px;
   }
 
   #btn-useModelTab {

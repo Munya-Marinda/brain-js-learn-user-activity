@@ -1,0 +1,375 @@
+<!--
+
+==================================================================
+==================================================================
+
+DEVELOPER: MUNYA 
+DESCR: Train and test json data against a Brain JS Neural Network                 
+
+==================================================================
+==================================================================                 
+                                                    
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Brain JS: [project name]</title>
+    <meta
+      name="description"
+      content="A program based on the Brain.js library"
+    />
+    <meta name="author" content="Munya" />
+
+    <meta property="og:title" content="Brain JS: [program name]" />
+    <meta property="og:type" content="Machine Learning" />
+    <meta property="og:url" content="brain.js.org" />
+    <meta
+      property="og:description"
+      content="A program based on the Brain.js library"
+    />
+    <meta property="og:image" content="none... yet" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="lib/brain.js"></script>
+    <script type="text/javascript" src="learn/user-activity.json"></script>
+    <script type="text/javascript" src="learn/user-activity.js"></script>
+  </head>
+
+  <body>
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!--     INTRODUCTION      -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+
+    <div class="center-column">
+      <!-- <img src="public/logo.svg" id="logoIntroTabImage"> -->
+      <div id="logoIntroTabImageDiv"></div>
+
+      <div id="topNavTab">
+        <button id="btn-trainModelTab" onclick="SwitchTabs('trainModelTab')">
+          TRAIN
+        </button>
+        <button id="btn-useModelTab" onclick="SwitchTabs('useModelTab')">
+          USE MODEL
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!--      TRAIN MODEL      -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+    <!-- ===================== -->
+
+    <div id="tabsMainParent">
+      <div class="fullContainer" id="trainModelTab">
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- TAB: SELECT AND TRAIN -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <div id="brainjsLogoContainer">
+          <div class="center-column">
+            <div class="width-container">
+              <h1 id="brainjsText-right">TRAIN MODEL</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-column">
+          <div id="brainControlPanel">
+            <div id="text-parent-fend-column">
+              <div class="fit-content flex-end">
+                <label for="filePath"
+                  >Select a file name in folder <b>/learn</b>:
+                </label>
+
+                <br />
+                <br />
+                <select id="filePath">
+                  <option value="user-activity.json">user-activity.json</option>
+                </select>
+
+                <br />
+                <div>
+                  <label for="showStatsPrompt">Show stats?</label>
+                  <input
+                    type="checkbox"
+                    id="showStatsPrompt"
+                    name="showStatsPrompt"
+                    value="Bike"
+                  />
+                </div>
+                <br />
+                <br />
+                <button
+                  class="btn-default"
+                  id="btnLearn"
+                  name="learn"
+                  onclick="StartTraining()"
+                >
+                  start training
+                </button>
+              </div>
+            </div>
+
+            <br />
+            <!-- ===================== -->
+            <!-- ===================== -->
+            <!-- TAB: SEE TRAINING DATA AND STATS -->
+            <!-- ===================== -->
+            <!-- ===================== -->
+            <div id="tabTrainingDataView">
+              <div id="brainjsLogoContainer-td" class="center-row">
+                <h1 id="brainjsText-left-fitContent">TRAINING DATA</h1>
+              </div>
+
+              <div id="brainControlPanelTrain">
+                <div class="text-parent-fstart-column">
+                  <div id="text-parent">
+                    <label for="fileContent"
+                      ><b>INPUT</b> and <b>OUTPUT</b> values.
+                    </label>
+                  </div>
+                </div>
+
+                <textarea rows="10" id="fileContent">
+////////////////////////////
+
+TRAINING DATA WILL APPEAR HERE
+</textarea
+                >
+
+                <br />
+                <br />
+                <div class="text-parent-fstart-row pad-20">
+                  <button
+                    class="btn-default"
+                    id="btnLearn"
+                    name="learn"
+                    onclick="SwitchTabs('useModelTab')"
+                  >
+                    use this model
+                  </button>
+                  <a href="learnt/traing-data.html" target="_blank">
+                    <button
+                      onclick="SaveModel()"
+                      class="btn-default"
+                      id="btnLearn"
+                      name="learn"
+                    >
+                      save training data
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <br />
+          </div>
+          <!-- ===================== -->
+          <!-- ===================== -->
+          <!-- TAB: STATS -->
+          <!-- ===================== -->
+          <!-- ===================== -->
+          <div id="learningStats">
+            <br />
+
+            <label style="margin-left: 20px" for="filePath"
+              >Training Stats:
+            </label>
+
+            <br />
+            <br />
+
+            <textarea rows="20" id="learningStatsText">
+////////////////////////////
+          
+TRAINING STATS WILL APPEAR HERE
+</textarea
+            >
+
+            <br />
+            <br />
+          </div>
+        </div>
+
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!--       USE MODEL       -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+        <!-- ===================== -->
+      </div>
+
+      <div class="fullContainer" id="useModelTab">
+        <div id="brainjsLogoContainer">
+          <div class="center-column">
+            <div class="width-container">
+              <h1 id="brainjsText-right">USE MODEL</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-column">
+          <div id="brainControlPanel">
+            <div id="text-parent-fend-column">
+              <div class="fit-content flex-end width-100perc">
+                <label for="filePath">Enter a text query: </label>
+
+                <br />
+                <br />
+
+                <input type="text" name="question" id="txtQuestion" />
+
+                <br />
+                <br />
+
+                <button
+                  class="btn-default"
+                  id="btnAnswer"
+                  name="answer"
+                  onclick="QueryData()"
+                >
+                  Answer (<span id="netCallCount">0</span>)
+                </button>
+              </div>
+
+              <br />
+            </div>
+
+            <div id="brainjsLogoContainer-td" class="center-row">
+              <h1 id="brainjsText-left-fitContent">ANSWER</h1>
+            </div>
+
+            <div id="fileContentContainer">
+              <textarea rows="10" id="queryOutPut"></textarea>
+
+              <br />
+              <br />
+
+              <div class="text-parent-fstart-column" id="trainAModel-NoModel">
+                <button
+                  class="btn-default"
+                  id="btnLearn"
+                  name="learn"
+                  onclick="SwitchTabs('trainModelTab')"
+                >
+                  train a model
+                </button>
+              </div>
+              <button
+                class="btn-default"
+                id="btnTrainAnotherModelTab"
+                name="learn"
+                onclick="SwitchTabs('trainModelTab')"
+              >
+                train another model
+              </button>
+            </div>
+            <br />
+
+            <div id="brainjsLogoContainer-td" class="center-row">
+              <h1 id="brainjsText-left-fitContent">TRAINING INPUT/OUTPUT</h1>
+            </div>
+            <div id="brainControlPanelTrain">
+              <div class="text-parent-fstart-column">
+                <div id="text-parent">
+                  <label for="fileContent-ShowOnUseModel"
+                    >This model's <b>INPUT</b> and <b>OUTPUT</b> values.
+                  </label>
+                </div>
+              </div>
+
+              <textarea rows="10" id="fileContent-ShowOnUseModel">
+////////////////////////////
+
+TRAINING DATA WILL APPEAR HERE
+</textarea
+              >
+
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+    <!-- =============================================================== -->
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
