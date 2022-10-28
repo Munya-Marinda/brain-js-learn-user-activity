@@ -35,13 +35,57 @@ body {
   display: none;
 }
 
-#logoHomeTabImageDiv {
-  width: 65vw;
-  height: 20vw;
-  background-image: url("../public/logo0.svg");
+#nav-parent {
+  padding: 10px 0px;
+  width: 100vw;
+  height: 40px;
+
+  /* IMAGE */
+  background-image: url("../public/nav-bg-1.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-ul > div,
+.nav-ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-ul {
+  width: 100%;
+}
+
+.nav-ul > div {
+  width: 25%;
+  transform: translateX(-50px);
+  justify-content: space-between;
+}
+
+.nav-ul > div > li {
+  padding: 0px;
+  margin: 0px;
+
+  /* FONT */
+  text-transform: uppercase;
+  font-size: large;
+
+}
+
+.nav-ul {
+  justify-content: space-between;
 }
 
 #logoIntroTabImageDiv {
